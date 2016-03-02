@@ -1,0 +1,9 @@
+<div class="col-sm-12">
+  <div class="col-sm-6 col-sm-offset-3">
+    <% if @matches.any? %>
+      <% @matches.each do |match| %>
+        <%= render 'match', match: match %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

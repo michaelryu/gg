@@ -1,0 +1,14 @@
+<div class="table-responsive">
+  <table class="table table-condensed">
+    <th>Summoner</th>
+    <th>KDA</th>
+    <th>Damage</th>
+    <th>CS</th>
+    <th>Gold</th>
+    <th>Wards</th>
+    <th>Objectives</th>
+    <% 10.times do |i| %>
+      <%= render 'matchsummoner', match: match, x: i %>
+    <% end %>
+  </table>
+</div>

@@ -1,0 +1,45 @@
+<% if match['participants'][x]['stats']['winner'] then result='winner' else result='loser' end %>
+<% if match['participantIdentities'][x]['player']['summonerId'] == @summoner then result+='main' end %>
+<tr>
+  <td class="<%= result %>">
+    <%= match['participantIdentities'][x]['player']['summonerName'] %>
+  </td>
+  <td class="<%= result %>">
+    <%= match['participants'][x]['stats']['kills'] %>/
+    <%= match['participants'][x]['stats']['deaths'] %>/
+    <%= match['participants'][x]['stats']['assists'] %>
+    <br>
+    <p class="details">
+      KDA: <%= ((match['participants'][x]['stats']['kills'].to_f + match['participants'][x]['stats']['assists'].to_f) /
+match['participants'][x]['stats']['deaths'].to_f).round(2)
+%>:1
+    </p>
+  </td>
+  <td class="<%= result %>">
+    <%= match['participants'][x]['stats']['totalDamageDealtToChampions'] %>
+  </td>
+  <td class="<%= result %>">
+    <%= match['participants'][x]['stats']['neutralMinionsKilled'] + match['participants'][x]['stats']['minionsKilled'] %>
+    <br>
+    <p class="details">
+      CS/min: <%= ((match['participants'][x]['stats']['neutralMinionsKilled'] + match['participants'][x]['stats']['minionsKilled'] ) / (match['matchDuration'] / 60.0)).round(2) %>
+    </p>
+  </td>
+  <td class="<%= result %>">
+    <%= match['participants'][x]['stats']['goldEarned'] %>
+  </td>
+  <td class="<%= result %>">
+    <%= match['participants'][x]['stats']['visionWardsBoughtInGame'] %>/
+    <%= match['participants'][x]['stats']['sightWardsBoughtInGame'] %>/
+    <%= match['participants'][x]['stats']['wardsPlaced'] %>/
+    <%= match['participants'][x]['stats']['wardsKilled'] %>
+    <br>
+    <p class="details">Vision/Sight/Placed/Removed</p>
+  </td>
+   <td class="<%= result %>">
+    <%= match['participants'][x]['stats']['inhibitorKills'] %>/
+    <%= match['participants'][x]['stats']['towerKills'] %>
+    <br>
+    <p class="details">Inhibitors/Towers</p>
+  </td>
+</tr>

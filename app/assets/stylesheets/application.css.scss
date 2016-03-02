@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.winner {
+  background-color: #DFF0D8;
+}
+
+.loser {
+  background-color: #F2DEDE;
+}
+
+.winnermain {
+  background-color: darken(#DFF0D8, 10%);
+}
+
+.losermain {
+  background-color: darken(#F2DEDE, 10%);
+}
+
+.table td, th {
+  text-align: center;
+}
+
+.details {
+  font-size: 0.8em;
+}
